@@ -15,8 +15,14 @@ var http = require("http");
 
 // createServer([callback])
 // 建立 HTTP 伺服器, 傳回 Server 物件，callback = 監聽 HTTP 請求事件之回呼函數, 攜帶 2 個參數：ServerRequest (請求物件), ServerResponse (回應物件)
+
 http.createServer(function(request, response){
-    response.writeHead
+    response.writeHead(200, {"Content-Type":"text/plain"});
+    response.write("Node.Js Hello World")
+    response.end()
 }).listen(8888);
 
 console.log('Server running at http://127.0.0.1:8888/');
+
+// 所以我們的程式碼就是：當收到請求時，使用 response.writeHead() 函數發送一個 HTTP 狀態 200 和 HTTP Head 的內容類型，
+// 使用 response.write() 函數在 HTTP 相應主體中發送文字，最後，我們執行 response.end() 完成回應。
