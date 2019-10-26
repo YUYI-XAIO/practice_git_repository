@@ -16,7 +16,7 @@ var http = require("http");
 // createServer([callback])
 // 建立 HTTP 伺服器, 傳回 Server 物件，callback = 監聽 HTTP 請求事件之回呼函數, 攜帶 2 個參數：ServerRequest (請求物件), ServerResponse (回應物件)
 http.createServer(function(request, response){
-    response
+    response.writeHead
 }).listen(8888);
 
 console.log('Server running at http://127.0.0.1:8888/');
